@@ -10,7 +10,7 @@
 	<div class="row">
 Your Name:
 <br>
-<input id="name" type="text" name="name"><br>
+<input id="name" type="text" name="name" value="<?php echo $_SESSION['name'];?>"><br>
 	</div>
 	<div class="row">
 Your Email:
