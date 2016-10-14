@@ -85,7 +85,7 @@ $(document).ready(function () {
     }
     function updateList(){
         setInterval(function(){
-            $.getJSON('JSON.JSON', function(data){
+            $.getJSON('endorseJSON.JSON', function(data){
                 document.getElementById("endorsementTable").innerHTML = "";
                 var innerHTML = "";
                 for (i = 0; i < data.length; i++){

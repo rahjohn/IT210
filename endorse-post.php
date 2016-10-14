@@ -1,7 +1,7 @@
 <?php
-    $jsonFile = "JSON.JSON";
+    $jsonFile = "endorseJSON.JSON";
     $arrayToAdd = array("name" => $_POST["name"], "date" => $_POST["date"], "endorse" => $_POST["endorse"]);
-    $arrayToAdd = ", \n  " . json_encode($arrayToAdd) . "]";
+    $arrayToAdd = " ," . json_encode($arrayToAdd) . "\n]\n";
     echo $arrayToAdd;
     $handle=fopen($jsonFile, 'r+');
     fseek($handle,-2,SEEK_END);
