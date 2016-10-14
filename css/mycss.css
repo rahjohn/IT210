@@ -1,0 +1,25 @@
+article {
+    margin: 20px;
+}
+.what {
+    color: #0d1318;
+}
+
+#who {
+    background-color: #cccccc;
+}
+
+#why {
+    font-family: Verdana;
+}
+
+#imdoingthisbecauseihaveto {
+    font-size: 5px;
+}
+table {
+    margin-top: 20px;
+}
+td {
+    width: 100px;
+    text-alight: center;
+}

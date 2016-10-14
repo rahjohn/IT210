@@ -1,0 +1,5 @@
+ErrorDocument 404 /404.php
+ErrorDocument 401 /401.php
+ErrorDocument 403 /403.php
+RedirectMatch 404 /settings.php
+deny from 192.168.175.
