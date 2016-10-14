@@ -57,7 +57,8 @@ include "header.php";
             if ($conn->connect_error) {
               die("Connection failed: " .$conn->connect_error);
             }
-           $result = mysqli_query($conn,"SELECT Comments.Comment, Comments.Date, Users.name FROM Comments INNER JOIN Users ON Comments.UserID=Users.ID");
+            $sql = "SELECT Comments.Comment, Comments.Date, Users.name FROM Comments INNER JOIN Users ON Comments.UserID=Users.ID";
+           $result = mysqli_query($conn, $sql);
            while($row = mysqli_fetch_array($result)){
            echo "<tr>";
            echo "<td>" . $row['name'] . "</td>";
@@ -73,7 +74,7 @@ include "header.php";
         if (isset($_SESSION['login_user'])) {
             echo "<h3>Submit a comment:</h3>";
             echo "<form action='comment-post.php' method='post'>";
-            echo "<textarea id='comment' type='text' class ='input' name='message' rows='7' cols='30'></textarea><br>";
+            echo "<textarea id='comment' type='text' class ='comment' name='comment' rows='7' cols='30'></textarea><br>";
             echo "<button type='submit' class='btn btn-info btn-md'>Comment</button>";
         }
         ?>

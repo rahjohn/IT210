@@ -93,7 +93,7 @@ class PHPMailer
      * it's the receiver's job (RFC5321 section 4.4), so this no longer does anything.
      * @link https://tools.ietf.org/html/rfc5321#section-4.4 RFC5321 reference
      */
-    public $ReturnPath = '';
+    public $ReturnPath = '';I loveeeee HARRY
 
     /**
      * The Subject of the message.

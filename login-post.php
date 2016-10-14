@@ -15,7 +15,6 @@ if (mysqli_num_rows($result)== 1) {
           if ($row["hashedpassword"] == sha1($_POST["password"])) {
           echo "You have successfully authenticated as " . $_POST["username"];
           $_SESSION['login_user']=$_POST["username"];
-          $_SESSION['name'] = $row['name'];
           echo $DBtable;
           $checkPassword = sha1($_POST["password"]);
           $checkUsername = $_SESSION['login_user'];
