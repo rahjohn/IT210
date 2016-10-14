@@ -16,6 +16,7 @@ if (mysqli_num_rows($result)== 1) {
           echo "You have successfully authenticated as " . $_POST["username"];
           $_SESSION['login_user']=$_POST["username"];
           $_SESSION['name']=$row["name"];
+          $_SESSION['email']=$row["email"];
           $checkPassword = sha1($_POST["password"]);
           $checkUsername = $_SESSION['login_user'];
           mysqli_query($db_handle, "UPDATE $DBtable SET loggedin = '1' WHERE username = '$checkUsername' and hashedpassword = '$checkPassword';");
