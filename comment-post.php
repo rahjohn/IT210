@@ -10,16 +10,13 @@ $comment = $_POST["comment"];
 $result = mysqli_query($conn, $sql);
 $db_handle = mysqli_connect("localhost","guest","guest", $DBname);
 $comment = mysqli_escape_string($conn, $comment);
-echo $comment;
 while($row = mysqli_fetch_array($result)){
     $ID = $row['ID'];
-    echo $ID;
 }
-echo $ID;
 $ID = mysqli_escape_string($conn, $ID);
-echo $ID;
-$sql = "INSERT INTO 'Comments' ('Comment', 'UserID') VALUES ('$comment', '$ID')";
+$sql = "INSERT INTO `Comments` (`ID`, `Comment`, `Date`, `UserID`) VALUES (NULL, '$comment', CURRENT_TIMESTAMP, '$ID')";
+echo $sql;
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
-//header( 'Location: projects.php' );
+header( 'Location: projects.php' );
 ?>

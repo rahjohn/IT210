@@ -7,7 +7,7 @@ $conn = new mysqli($DBserver, $DBuser, $DBpassword, $DBname);
 if ($conn->connect_error) {
   die("Connection failed: " .$conn->connect_error);
 }
-$sql = 'SELECT hashedpassword FROM Users where username = \'' . $_POST["username"] . '\'';
+$sql = 'SELECT * FROM Users where username = \'' . $_POST["username"] . '\'';
 $result = mysqli_query($conn, $sql);
 $db_handle = mysqli_connect("localhost","guest","guest", $DBname);
 if (mysqli_num_rows($result)== 1) {
@@ -15,7 +15,7 @@ if (mysqli_num_rows($result)== 1) {
           if ($row["hashedpassword"] == sha1($_POST["password"])) {
           echo "You have successfully authenticated as " . $_POST["username"];
           $_SESSION['login_user']=$_POST["username"];
-          echo $DBtable;
+          $_SESSION['name']=$row["name"];
           $checkPassword = sha1($_POST["password"]);
           $checkUsername = $_SESSION['login_user'];
           mysqli_query($db_handle, "UPDATE $DBtable SET loggedin = '1' WHERE username = '$checkUsername' and hashedpassword = '$checkPassword';");
