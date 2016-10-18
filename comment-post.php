@@ -15,7 +15,6 @@ while($row = mysqli_fetch_array($result)){
 }
 $ID = mysqli_escape_string($conn, $ID);
 $sql = "INSERT INTO `Comments` (`ID`, `Comment`, `Date`, `UserID`) VALUES (NULL, '$comment', CURRENT_TIMESTAMP, '$ID')";
-echo $sql;
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
 header( 'Location: projects.php' );
